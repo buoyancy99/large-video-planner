@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Official Website for Large Video Planner Enables Generalizable Robot Control" />
+    <meta name="keywords" content="Large Video Planner, Generalizable Robot Control, Video Generation" />
+    <meta property="og:image" content="https://boyuan.space/history-guidance/static/images/thumbnail.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>History-Guided Video Diffusion</title>
+
+    <!--TWITTER TODO-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Large Video Planner Enables Generalizable Robot Control" />
+    <meta name="twitter:description"
+        content="official website for Large Video Planner Enables Generalizable Robot Control" />
+    <meta name="twitter:image" content="https://boyuan.space/history-guidance/static/images/thumbnail.jpg" />
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <link rel="icon" href="./static/images/favicon.svg" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            <span class="dnerf">Large Video Planner Enables Generalizable Robot Control</span>
+                        </h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3">
+                <center>Zero-shot Prompt Following</center>
+            </h2>
+
+            <!-- <center>
+                <p>Rendering at 1024x1024 resolution, best viewed in full screen.</p>
+            </center> -->
+            <br>
+            <div class="hero-body">
+                <!-- green table with drawer -->
+                <div class="columns is-1 is-multiline is-mobile">
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source src="raw_videos/robot_video_gen/Green Table with Drawer/close_drawer.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Close drawer</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source src="raw_videos/robot_video_gen/Green Table with Drawer/pick_up_mug.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Pick up mug</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source src="raw_videos/robot_video_gen/Green Table with Drawer/pick_up_tissue.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Pick up tissue</p>
+                    </div>
+                </div>
+
+                <!-- white clutter table one
+                <div class="columns is-1 is-multiline is-mobile">
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source src="raw_videos/robot_video_gen/White Clutter Table One/place_bottle_on_paper.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Place bottle on paper</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/robot_video_gen/White Clutter Table One/place_orange_in_red_bowl.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Place orange in red bowl</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source src="raw_videos/robot_video_gen/White Clutter Table One/press_stapler.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Press stapler</p>
+                    </div>
+                </div> -->
+
+                <!-- Bathroom Sink -->
+                <div class="columns is-1 is-multiline is-mobile">
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/bathroom_sink/a_left_hand_reaches_for_the_faucet_handle_on_the_left_to_turn_on_the_water.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Reaches for the faucet handle on the left
+                            to turn on the water</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/bathroom_sink/a_left_hand_reaches_for_the_glass_cup_and_place_it_in_the_sink.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Place the glass cup in the sink</p>
+
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/bathroom_sink/a_left_hand_reaches_for_the_glass_cup_and_place_under_the_faucet.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Place the glass cup under the faucet </p>
+                    </div>
+                </div>
+
+                <!-- Water Table -->
+                <!-- <div class="columns is-1 is-multiline is-mobile">
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/water_table/A_right_hand_grab_the_silver_metal_cup_on_the_left_side_of_the_table.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Grab the silver metal cup on the left side
+                            of the table</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/water_table/A_right_hand_reaches_for_the_white_water_pitcher_to_pour_water_into_the_small_gray_metal_cup_on_the_left.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Pour water into the small gray metal cup on
+                            the left</p>
+
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/water_table/A_right_hand_reaches_to_pick_up_the_small_dark_green_cup_on_the_right.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Pick up the dark green cup on the
+                            right</p>
+                    </div>
+                </div> -->
+
+                <!-- red black cup -->
+                <div class="columns is-1 is-multiline is-mobile">
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/red_black_cup/A_right_hand_holding_a_silver_spoon_places_it_into_the_black_mug.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Place spoon into the black mug</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/red_black_cup/A_right_hand_holding_a_silver_spoon_places_it_on_the_white_table.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Place spoon on the table</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/red_black_cup/place_the_silver_spoon_into_the_red_cup.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Place spoon into the red cup</p>
+                    </div>
+                </div>
+
+                <!-- plates and cup -->
+                <div class="columns is-1 is-multiline is-mobile">
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/cup_and_plates/A_left_hand_reaches_to_pick_up_a_white_cup_from_the_leftmost_queue_on_a_black_shelf.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Pick up a white cup from the leftmost queue
+                        </p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/cup_and_plates/A_left_hand_reaches_to_move_a_white_mug_from_the_leftmost_row_to_the_middle_row_on_the_black_shelf.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Move a white cup from the leftmost row to
+                            the middle row</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/cup_and_plates/A_left_hand_reaches_to_move_a_white_mug_from_the_leftmost_row_to_the_rightmost_row_on_the_black_shelf.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Move a white cup from the leftmost row to
+                            the rightmost row</p>
+                    </div>
+                </div>
+
+                <!-- whiteboard -->
+                <div class="columns is-1 is-multiline is-mobile">
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source src="raw_videos/prompt_following/whiteboard/grab_the_eraser__from_the_tray.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Grab the eraser from the tray</p>
+                        </p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/whiteboard/grab_the_purple_marker_pen_from_the_tray.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Grab the purple marker pen</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-one-third">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source
+                                src="raw_videos/prompt_following/whiteboard/grab_the_the_black_marker_pen_and_place_it_on_the_eraser.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Grab the black marker pen and place it on
+                            the eraser</p>
+                    </div>
+                </div>
+
+                <!-- Two Turntables -->
+                <div class="columns is-1 is-multiline is-mobile">
+                    <div class="column pb-0 mb-0 is-half">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source src="raw_videos/robot_video_gen/White Cluter Table Two/pick_up_gold_bottle.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Pick up the gold bottle</p>
+                    </div>
+                    <div class="column pb-0 mb-0 is-half">
+                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
+                            <source src="raw_videos/robot_video_gen/White Cluter Table Two/pick_up_santinizer.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey">Pick up the santinizer</p>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+
+    <hr>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            We borrow the source code of this page from <a
+                                href="https://github.com/nerfies/nerfies.github.io">HERE</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
