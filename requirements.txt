@@ -1,66 +1,69 @@
-# Core PyTorch and Deep Learning
-torch>=2.4.0
-torchvision>=0.19.0
-lightning>=2.0.0
-numpy>=1.23.5,<2.0.0
+# Core ML frameworks
+torch==2.6.0
+torchvision==0.21.0
+pytorch-lightning==2.5.0.post0
+lightning==2.6.0
+numpy==1.24.4
 
-# Model Training and Optimization
-transformers>=4.49.0
-diffusers>=0.31.0
-accelerate>=1.1.1
-tokenizers>=0.20.3
-deepspeed  # Install separately with: DS_BUILD_UTILS=1 DS_BUILD_FUSED_ADAM=1 DS_BUILD_CPU_ADAM=1 pip install deepspeed
-flash-attn>=2.0.0  # For efficient attention mechanisms
+# Language Models & Diffusion
+transformers==4.51.3
+diffusers==0.34.0
+accelerate==1.1.1
+tokenizers==0.21.4
+deepspeed==0.15.1  # Install with: DS_BUILD_UTILS=1 DS_BUILD_FUSED_ADAM=1 DS_BUILD_CPU_ADAM=1 pip install deepspeed
+#flash-attn==2.3.5  # Optional, for efficient attention. Install with: pip install flash-attn --no-build-isolation
 
-# Configuration and Experiment Management
-hydra-core>=1.3.0
-omegaconf>=2.3.0
-pyyaml>=6.0
+# Configuration & Logging
+hydra-core==1.3.2
+omegaconf==2.3.0
+pyyaml==6.0.2
 
-# Logging and Monitoring
-wandb>=0.15.0
-wandb-osh>=0.2.0  # For offline syncing
-tensorboard>=2.13.0
+# Experiment Tracking
+wandb==0.19.1
+wandb-osh==1.2.2
+tensorboard==2.19.0
 
-# Video Processing
-opencv-python>=4.9.0
-decord>=0.6.0
-imageio>=2.35.1
-imageio-ffmpeg>=0.5.1
-moviepy>=1.0.3
-pyav>=10.0.0
-scikit-video>=1.1.11
+# Media Processing
+opencv-python==4.9.0.80
+decord==0.6.0
+imageio==2.34.0
+imageio-ffmpeg==0.5.1
+moviepy==1.0.3
+av==14.0.1  # Note: Changed from pyav==14.0.1
+scikit-video==1.1.11
 
 # Image Processing
-pillow>=9.5.0,<10.0.0  # Pinned for compatibility
-einops>=0.7.0
+pillow==11.1.0
+einops==0.8.0
+
+# Data Analysis
+pandas==2.1.4
+scikit-learn==1.5.0
+matplotlib==3.8.2
+plotly==5.18.0
 
 # Dataset Dependencies
-tensorflow>=2.15.0  # For tensorflow-datasets
-tensorflow-datasets>=4.9.0
-gcsfs>=2023.6.0  # For Google Cloud Storage datasets
-ego4d>=2.0.0  # For Ego4D dataset
-ijson>=3.2.0  # For streaming JSON parsing
+tensorflow==2.15.0  # For tensorflow-datasets
+tensorflow-datasets==4.9.7
+gcsfs==2024.12.0  # For Google Cloud Storage datasets
+ego4d==1.7.3  # For Ego4D dataset
+ijson==3.3.0  # For streaming JSON parsing
 
 # Text Processing and Tokenization
-sentencepiece>=0.2.0
-ftfy>=6.1.0  # For text cleaning
+sentencepiece==0.2.0
+ftfy==6.3.1  # For text cleaning
 
 # Hugging Face Hub
-huggingface-hub>=0.20.0
+huggingface-hub==0.33.4
 
 # Utilities
-tqdm>=4.65.0
-colorama>=0.4.6
-click>=8.1.0
-easydict>=1.10
-msgpack>=1.0.5  # For message serialization
-pyzmq>=25.0.0  # For ZeroMQ (used in serving)
+tqdm==4.66.2
+colorama==0.4.6
+click==8.1.8
+easydict==1.13
+msgpack==1.1.2  # For message serialization
+pyzmq==27.1.0  # For ZeroMQ (used in serving)
+pydantic
 
 # Optional: Gradio for Demos
-gradio>=5.0.0
-
-
-# Deprecated/Legacy Dependencies (CogVideoX - not currently used)
-# SwissArmyTransformer>=0.4.12
-# vertexai>=1.0.0  # For Google Vertex AI (optional)
+gradio==5.11.0
