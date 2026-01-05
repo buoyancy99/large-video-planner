@@ -35,7 +35,8 @@ $(document).ready(function () {
     loop: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 12000,
+    // Faster slide switching (ms)
+    autoplaySpeed: 3000,
   }
 
   // Initialize all div with carousel class
@@ -230,7 +231,8 @@ $(document).ready(function () {
       loop: true,
       infinite: true,
       autoplay: true,
-      autoplaySpeed: 5000,
+      // Faster slide switching (ms)
+      autoplaySpeed: 2500,
     };
 
     // Lazy-load: populate <source src> only when video is (mostly) visible.
