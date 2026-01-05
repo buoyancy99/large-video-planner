@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Official Website for Large Video Planner Enables Generalizable Robot Control" />
-    <meta name="keywords" content="Large Video Planner, Generalizable Robot Control, Video Generation" />
-    <meta property="og:image" content="https://boyuan.space/history-guidance/static/images/thumbnail.jpg" />
+    <meta
+      name="description"
+      content="Additional results for Large Video Planner Enables Generalizable Robot Control" />
+    <meta
+      name="keywords"
+      content="Large Video Planner, Generalizable Robot Control, Video Generation" />
+    <meta
+      property="og:image"
+      content="https://boyuan.space/large-video-planner/static/images/thumbnail.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>History-Guided Video Diffusion</title>
+    <title>Large Video Planner</title>
 
     <!--TWITTER TODO-->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Large Video Planner Enables Generalizable Robot Control" />
-    <meta name="twitter:description"
-        content="official website for Large Video Planner Enables Generalizable Robot Control" />
-    <meta name="twitter:image" content="https://boyuan.space/history-guidance/static/images/thumbnail.jpg" />
+    <meta
+      name="twitter:title"
+      content="Large Video Planner Enables Generalizable Robot Control" />
+    <meta
+      name="twitter:description"
+      content="official website for Large Video Planner Enables Generalizable Robot Control" />
+    <meta
+      name="twitter:image"
+      content="https://boyuan.space/large-video-planner/static/images/thumbnail.jpg" />
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet" />
 
     <link rel="stylesheet" href="./static/css/bulma.min.css" />
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
     <link rel="stylesheet" href="./static/css/index.css" />
     <link rel="icon" href="./static/images/favicon.svg" />
 
@@ -31,332 +45,603 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <section class="hero">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">
-                            <span class="dnerf">Large Video Planner Enables Generalizable Robot Control</span>
-                        </h1>
-
-                    </div>
-                </div>
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                <span class="dnerf"
+                  >Large Video Planner Enables Generalizable Robot Control</span
+                >
+              </h1>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-
-
 
     <section class="hero teaser">
-        <div class="container is-max-desktop">
-            <h2 class="title is-3">
-                <center>Generated Videos with Robot Gripper</center>
-            </h2>
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">
+          <center>Generated Videos with Robot Gripper</center>
+        </h2>
 
-            <!-- <center>
+        <!-- <center>
                 <p>Rendering at 1024x1024 resolution, best viewed in full screen.</p>
             </center> -->
-            <br>
+        <br />
 
+        <!-- Two Turntables -->
 
-            <!-- Two Turntables -->
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/robot_video_gen/good_task_example/place_screwdriver_on_case.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Place Screwdriver On the Case
+            </p>
+          </div>
 
-            <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/robot_video_gen/good_task_example/pick_up_santinizer.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Pick Up Santinizer
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/robot_video_gen/good_task_example/place_screwdriver_on_case.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Place Screwdriver On the Case</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/robot_video_gen/good_task_example/place_bottle_on_paper.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Place Bottle On Paper
+            </p>
+          </div>
 
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/robot_video_gen/good_task_example/place_capybara.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Place Capybara
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/robot_video_gen/good_task_example/pick_up_santinizer.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Pick Up Santinizer</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/robot_video_gen/good_task_example/place_silver_mug.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Place Silver Mug
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/robot_video_gen/good_task_example/place_bottle_on_paper.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Place Bottle On Paper</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/robot_video_gen/good_task_example/place_capybara.mp4" type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Place Capybara</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/robot_video_gen/good_task_example/place_silver_mug.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Place Silver Mug</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/robot_video_gen/good_task_example/press_stapler.mp4" type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Press Stapler</p>
-                </div>
-            </div>
-
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/robot_video_gen/good_task_example/press_stapler.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Press Stapler
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <hr>
-    <br>
+    <hr />
+    <br />
 
     <section class="hero teaser">
-        <div class="container is-max-desktop">
-            <h2 class="title is-3">
-                <center>Generated Videos with with Ego-centric Human Motions <br> (Third-party collected scenes and
-                    tasks) </center>
-            </h2>
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">
+          <center>
+            Generated Videos with with Ego-centric Human Motions <br />
+            (Third-party collected scenes and tasks)
+          </center>
+        </h2>
 
-            <!-- <center>
+        <!-- <center>
                 <p>Rendering at 1024x1024 resolution, best viewed in full screen.</p>
             </center> -->
-            <br>
+        <br />
 
+        <!-- Two Turntables -->
 
-            <!-- Two Turntables -->
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/A%20right%20hand%20in%20a%20grey%20sleeve%20reaches%20to%20lift%20the%20stainless%20steel%20pan%20lid%20from%20the%20black%20electric%20stovetop.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              A right hand in a grey sleeve reaches to lift the stainless steel
+              pan lid from the black electric stovetop
+            </p>
+          </div>
 
-            <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/flick%20the%20light%20switch%20upward.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Flick the light switch upward
+            </p>
+          </div>
 
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/grab%20the%20black%20gas%20nozzle.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Grab the black gas nozzle
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/results_gallery_human/A%20right%20hand%20in%20a%20grey%20sleeve%20reaches%20to%20lift%20the%20stainless%20steel%20pan%20lid%20from%20the%20black%20electric%20stovetop.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">A right hand in a grey sleeve reaches to lift
-                        the stainless steel pan lid from the black electric stovetop</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/Insert%20the%20straw%20into%20the%20cup.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Insert the straw into the cup
+            </p>
+          </div>
 
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/lift%20the%20lid%20of%20a%20gray%20computer.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Lift the lid of a gray computer
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/flick%20the%20light%20switch%20upward.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Flick the light switch upward</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/lifts%20the%20lid%20off%20a%20while%20jar.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Lifts the lid off a while jar
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/grab%20the%20black%20gas%20nozzle.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Grab the black gas nozzle</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/moves%20the%20pink%20mouse%20closer%20to%20the%20foreground.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Moves the pink mouse closer to the foreground
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/Insert%20the%20straw%20into%20the%20cup.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Insert the straw into the cup</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/open%20the%20oven.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Open the oven
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/lift%20the%20lid%20of%20a%20gray%20computer.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Lift the lid of a gray computer</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/open%20the%20trash%20bin.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Open the trash bin
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/lifts%20the%20lid%20off%20a%20while%20jar.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Lifts the lid off a while jar</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/pick%20up%20the%20blue%20creamer.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Pick up the blue creamer
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/results_gallery_human/moves%20the%20pink%20mouse%20closer%20to%20the%20foreground.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Moves the pink mouse closer to the foreground
-                    </p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/pick%20up%20the%20blue%20notebook.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Pick up the blue notebook
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/open%20the%20oven.mp4" type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Open the oven</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/pick%20up%20the%20soap.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Pick up the soap
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/open%20the%20trash%20bin.mp4" type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Open the trash bin</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/places%20the%20fork%20into%20the%20red%20cup%20decorated%20with%20a%20dog%20pattern..mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Places the fork into the red cup decorated with a dog pattern
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/pick%20up%20the%20blue%20creamer.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Pick up the blue creamer</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/press%20the%20button%20to%20flash%20the%20toliet.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Press the button to flash the toliet
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/pick%20up%20the%20blue%20notebook.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Pick up the blue notebook</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/press%20the%20red%20button.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Press the red button
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/pick%20up%20the%20soap.mp4" type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Pick up the soap</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/pull%20out%20a%20tissue..mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Pull out a tissue
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/results_gallery_human/places%20the%20fork%20into%20the%20red%20cup%20decorated%20with%20a%20dog%20pattern..mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Places the fork into the red cup decorated with
-                        a dog pattern</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/pull%20out%20the%20blue%20book.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Pull out the blue book
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/results_gallery_human/press%20the%20button%20to%20flash%20the%20toliet.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Press the button to flash the toliet</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/pull%20the%20straw%20out%20of%20the%20lid.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Pull the straw out of the lid
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/press%20the%20red%20button.mp4" type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Press the red button</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/pulls%20the%20black%20vertical%20handle%20to%20open%20the%20fridge.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Pulls the black vertical handle to open the fridge
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/pull%20out%20a%20tissue..mp4" type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Pull out a tissue</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/erase%20the%20purple%20triangle%20drawn%20on%20the%20board..mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Erase the purple triangle drawn on the board
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/pull%20out%20the%20blue%20book.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Pull out the blue book</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/reaches%20for%20the%20silver%20doorknob%20to%20open%20the%20gate.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Reaches for the silver doorknob to open the gate
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/pull%20the%20straw%20out%20of%20the%20lid.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Pull the straw out of the lid</p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/switch%20off%20the%20light.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Switch off the light
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/results_gallery_human/pulls%20the%20black%20vertical%20handle%20to%20open%20the%20fridge.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Pulls the black vertical handle to open the
-                        fridge</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/results_gallery_human/erase%20the%20purple%20triangle%20drawn%20on%20the%20board..mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Erase the purple triangle drawn on the board
-                    </p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/results_gallery_human/reaches%20for%20the%20silver%20doorknob%20to%20open%20the%20gate.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Reaches for the silver doorknob to open the
-                        gate</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/switch%20off%20the%20light.mp4" type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Switch off the light</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source src="raw_videos/results_gallery_human/take%20out%20the%20spray%20bottle.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Take out the spray bottle</p>
-                </div>
-
-            </div>
-
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/results_gallery_human/take%20out%20the%20spray%20bottle.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Take out the spray bottle
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-
-    <hr>
-
+    <hr />
 
     <footer class="footer">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-8">
-                    <div class="content">
-                        <p>
-                            We borrow the source code of this page from <a
-                                href="https://github.com/nerfies/nerfies.github.io">HERE</a>.
-                        </p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                We borrow the source code of this page from
+                <a href="https://github.com/nerfies/nerfies.github.io">HERE</a>.
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>

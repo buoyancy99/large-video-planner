@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Official Website for Large Video Planner Enables Generalizable Robot Control" />
-    <meta name="keywords" content="Large Video Planner, Generalizable Robot Control, Video Generation" />
-    <meta property="og:image" content="https://boyuan.space/history-guidance/static/images/thumbnail.jpg" />
+    <meta
+      name="description"
+      content="Official Website for Large Video Planner Enables Generalizable Robot Control" />
+    <meta
+      name="keywords"
+      content="Large Video Planner, Generalizable Robot Control, Video Generation" />
+    <meta
+      property="og:image"
+      content="https://boyuan.space/large-video-planner/static/images/thumbnail.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>History-Guided Video Diffusion</title>
+    <title>Large Video Planner</title>
 
     <!--TWITTER TODO-->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Large Video Planner Enables Generalizable Robot Control" />
-    <meta name="twitter:description"
-        content="official website for Large Video Planner Enables Generalizable Robot Control" />
-    <meta name="twitter:image" content="https://boyuan.space/history-guidance/static/images/thumbnail.jpg" />
+    <meta
+      name="twitter:title"
+      content="Large Video Planner Enables Generalizable Robot Control" />
+    <meta
+      name="twitter:description"
+      content="official website for Large Video Planner Enables Generalizable Robot Control" />
+    <meta
+      name="twitter:image"
+      content="https://boyuan.space/large-video-planner/static/images/thumbnail.jpg" />
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet" />
 
     <link rel="stylesheet" href="./static/css/bulma.min.css" />
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
     <link rel="stylesheet" href="./static/css/index.css" />
     <link rel="icon" href="./static/images/favicon.svg" />
 
@@ -31,150 +45,183 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <section class="hero">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">
-                            <span class="dnerf">Large Video Planner Enables Generalizable Robot Control</span>
-                        </h1>
-
-                    </div>
-                </div>
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                <span class="dnerf"
+                  >Large Video Planner Enables Generalizable Robot Control</span
+                >
+              </h1>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-
-
 
     <section class="hero teaser">
-        <div class="container is-max-desktop">
-            <h2 class="title is-3">
-                <center>Results Gallery with Robot Gripper</center>
-            </h2>
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">
+          <center>Results Gallery with Robot Gripper</center>
+        </h2>
 
-            <!-- <center>
+        <!-- <center>
                 <p>Rendering at 1024x1024 resolution, best viewed in full screen.</p>
             </center> -->
-            <br>
+        <br />
 
+        <!-- Two Turntables -->
 
-            <!-- Two Turntables -->
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/multi_stage_examples/two_stage_results/A_hand_moves_the_yellow_object_on_the_white_desk_further_into_the_foregroundA%20hand%20moves%20the%20yellow%20object%20on%20the%20white%20desk%20further%20into%20the%20foreground.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              1: Move the Pink Mouse Further Into the Foreground
+            </p>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              2: Move the Yellow Object Further Into the Foreground
+            </p>
+          </div>
 
-            <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/multi_stage_examples/two_stage_results/A_hand_slightly_moves_the_clear_plastic_cup_to_the_right_on_the_tableA%20hand%20slightly%20moves%20the%20clear%20plastic%20cup%20to%20the%20right%20on%20the%20table.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              1: Insert the green straw into the clear plastic cup
+            </p>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              2: Move the clear plastic cup to the right on the table
+            </p>
+          </div>
 
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/multi_stage_examples/two_stage_results/A_left_hand_gently_pushes_the_red_mug_towards_to_left_on_the_tableA%20left%20hand%20gently%20pushes%20the%20red%20mug%20towards%20to%20left%20on%20the%20table.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              1: Places the fork into the red mug
+            </p>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              2: Gently pushes the red mug towards to left on the table
+            </p>
+          </div>
 
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/multi_stage_examples/two_stage_results/A_left_hand_stackes_the_pink_mouse_on_top_of_the_yellow_object_on_the_tableA%20left%20hand%20stackes%20the%20pink%20mouse%20on%20top%20of%20the%20yellow%20object%20on%20the%20table.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              1: Move the Pink Mouse Further Into the Foreground
+            </p>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              2: Stackes the pink mouse on top of the yellow object on the table
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/multi_stage_examples/two_stage_results/A_hand_moves_the_yellow_object_on_the_white_desk_further_into_the_foregroundA%20hand%20moves%20the%20yellow%20object%20on%20the%20white%20desk%20further%20into%20the%20foreground.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">1: Move the Pink Mouse Further Into the
-                        Foreground
-                    </p>
-                    <p class="has-text-centered is-size-6 has-text-grey">2: Move the Yellow Object Further Into the
-                        Foreground
-                    </p>
-                </div>
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/multi_stage_examples/two_stage_results/A_right_hand_moves_the_black_mug_to_the_right_using_its_handleA%20right%20hand%20moves%20the%20black%20mug%20to%20the%20right%20using%20its%20handle.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              1: Places the spoon into the black mug
+            </p>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              2: Moves the black mug to the right using its handle
+            </p>
+          </div>
 
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/multi_stage_examples/two_stage_results/A_hand_slightly_moves_the_clear_plastic_cup_to_the_right_on_the_tableA%20hand%20slightly%20moves%20the%20clear%20plastic%20cup%20to%20the%20right%20on%20the%20table.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">1: Insert the green straw into the clear
-                        plastic cup
-                    </p>
-                    <p class="has-text-centered is-size-6 has-text-grey">2: Move the clear plastic cup to the right on
-                        the table</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/multi_stage_examples/two_stage_results/A_left_hand_gently_pushes_the_red_mug_towards_to_left_on_the_tableA%20left%20hand%20gently%20pushes%20the%20red%20mug%20towards%20to%20left%20on%20the%20table.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">1: Places the fork into the red mug
-                    </p>
-                    <p class="has-text-centered is-size-6 has-text-grey">2: Gently pushes the red mug towards
-                        to left on the table</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/multi_stage_examples/two_stage_results/A_left_hand_stackes_the_pink_mouse_on_top_of_the_yellow_object_on_the_tableA%20left%20hand%20stackes%20the%20pink%20mouse%20on%20top%20of%20the%20yellow%20object%20on%20the%20table.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">1: Move the Pink Mouse Further Into the
-                        Foreground
-                    </p>
-                    <p class="has-text-centered is-size-6 has-text-grey">2: Stackes the pink mouse on top of
-                        the yellow object on the table</p>
-                </div>
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/multi_stage_examples/two_stage_results/A_right_hand_moves_the_black_mug_to_the_right_using_its_handleA%20right%20hand%20moves%20the%20black%20mug%20to%20the%20right%20using%20its%20handle.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">1: Places the spoon into the black mug
-                    </p>
-                    <p class="has-text-centered is-size-6 has-text-grey">2: Moves the black mug to the right using its
-                        handle</p>
-                </div>
-
-
-                <div class="column pb-0 mb-0 is-half">
-                    <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                        <source
-                            src="raw_videos/multi_stage_examples/two_stage_results/A_right_hand_places_the_blue_hardcover_book_on_top_of_the_red_bookA%20right%20hand%20places%20the%20blue%20hardcover%20book%20on%20top%20of%20the%20red%20book.mp4"
-                            type="video/mp4">
-                    </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">1: Pull out the blue hardcover book
-                    </p>
-                    <p class="has-text-centered is-size-6 has-text-grey">2: Places the blue hardcover book on
-                        top of the red book</p>
-                </div>
-
-
-            </div>
-
+          <div class="column pb-0 mb-0 is-half">
+            <video
+              id="teaser"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              height="100%">
+              <source
+                src="raw_videos/multi_stage_examples/two_stage_results/A_right_hand_places_the_blue_hardcover_book_on_top_of_the_red_bookA%20right%20hand%20places%20the%20blue%20hardcover%20book%20on%20top%20of%20the%20red%20book.mp4"
+                type="video/mp4" />
+            </video>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              1: Pull out the blue hardcover book
+            </p>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              2: Places the blue hardcover book on top of the red book
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-
-
-
-    <hr>
-
+    <hr />
 
     <footer class="footer">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-8">
-                    <div class="content">
-                        <p>
-                            We borrow the source code of this page from <a
-                                href="https://github.com/nerfies/nerfies.github.io">HERE</a>.
-                        </p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                We borrow the source code of this page from
+                <a href="https://github.com/nerfies/nerfies.github.io">HERE</a>.
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>
