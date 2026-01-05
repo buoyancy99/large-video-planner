@@ -303,6 +303,7 @@ $(document).ready(function () {
 
   // AI-generated elbow connector arrows (fixed start label -> scrolling video sections)
   (function initAIGeneratedConnectors() {
+    const callout = document.querySelector('.ai-generated-callout');
     const calloutText = document.querySelector('.ai-generated-callout__text');
     if (!calloutText) return;
 
@@ -475,6 +476,7 @@ $(document).ready(function () {
 
       // Default: hide everything.
       for (const p of paths) p.style.opacity = '0';
+      if (callout) callout.classList.toggle('ai-generated-callout--visible', chosen.length > 0);
       if (chosen.length === 0) return;
 
       // Fan-out near the callout without moving the true tail point.

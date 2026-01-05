@@ -17,9 +17,17 @@ body {
   color: hsl(204, 86%, 53%);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 12px;
   filter: drop-shadow(0 14px 30px rgba(10, 10, 10, 0.18));
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.ai-generated-callout.ai-generated-callout--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .ai-generated-callout__text {
@@ -29,7 +37,7 @@ body {
   line-height: 1.05;
   /* ~2x scale */
   font-size: clamp(22px, 2.1vw, 30px);
-  text-align: right;
+  text-align: center;
   padding: 16px 18px;
   background: #fff;
   border: 2px solid currentColor;
@@ -75,6 +83,9 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .ai-generated-callout__text {
     animation: none;
+  }
+  .ai-generated-callout {
+    transition: none;
   }
 }
 
