@@ -28,16 +28,14 @@ body {
   letter-spacing: 0.01em;
   line-height: 1.05;
   /* ~2x scale */
-  font-size: clamp(30px, 2.7vw, 40px);
+  font-size: clamp(22px, 2.1vw, 30px);
   text-align: right;
-  padding: 24px 28px;
-  background: rgba(255, 255, 255, 0.84);
-  border: 1px solid rgba(50, 115, 220, 0.28);
-  border-left: 12px solid currentColor;
-  border-radius: 28px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 2px solid currentColor;
+  border-left: 10px solid currentColor;
+  border-radius: 20px;
   position: relative;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 24px rgba(10, 10, 10, 0.10);
 }
 
@@ -45,15 +43,16 @@ body {
 .ai-generated-callout__text::before {
   content: "";
   position: absolute;
-  left: -20px;
+  left: 50%;
   top: 50%;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   transform: translate(-50%, -50%);
   background: currentColor;
   border-radius: 999px;
-  border: 6px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 18px rgba(10, 10, 10, 0.14);
+  opacity: 0.12;
+  border: 0;
+  box-shadow: none;
 }
 
 /* Subtle attention pulse */

@@ -319,6 +319,7 @@ $(document).ready(function () {
 
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const svgNS = 'http://www.w3.org/2000/svg';
+    const sign = (v) => (v < 0 ? -1 : 1);
 
     // Create a fixed, full-viewport SVG layer for connectors.
     const svg = document.createElementNS(svgNS, 'svg');
@@ -368,6 +369,50 @@ $(document).ready(function () {
       raf = window.requestAnimationFrame(update);
     };
 
+    function roundedElbowPath(points, radius) {
+      // Build a polyline path with rounded 90° corners using quadratic curves.
+      if (!points || points.length < 2) return '';
+      const r = Math.max(0, radius || 0);
+      if (r === 0 || points.length === 2) {
+        return `M ${points[0].x} ${points[0].y} ` + points.slice(1).map(p => `L ${p.x} ${p.y}`).join(' ');
+      }
+
+      const parts = [];
+      parts.push(`M ${points[0].x} ${points[0].y}`);
+
+      for (let i = 1; i < points.length - 1; i++) {
+        const prev = points[i - 1];
+        const curr = points[i];
+        const next = points[i + 1];
+
+        const v1x = curr.x - prev.x;
+        const v1y = curr.y - prev.y;
+        const v2x = next.x - curr.x;
+        const v2y = next.y - curr.y;
+
+        // If any segment is zero-length, fall back to a straight join.
+        const len1 = Math.hypot(v1x, v1y);
+        const len2 = Math.hypot(v2x, v2y);
+        if (len1 < 0.0001 || len2 < 0.0001) {
+          parts.push(`L ${curr.x} ${curr.y}`);
+          continue;
+        }
+
+        const rr = Math.min(r, len1 / 2, len2 / 2);
+        const inX = curr.x - (v1x / len1) * rr;
+        const inY = curr.y - (v1y / len1) * rr;
+        const outX = curr.x + (v2x / len2) * rr;
+        const outY = curr.y + (v2y / len2) * rr;
+
+        parts.push(`L ${inX} ${inY}`);
+        parts.push(`Q ${curr.x} ${curr.y} ${outX} ${outY}`);
+      }
+
+      const last = points[points.length - 1];
+      parts.push(`L ${last.x} ${last.y}`);
+      return parts.join(' ');
+    }
+
     function getTargetRect(targetEl) {
       // For sections with carousels/transforms, the first <video> can be off-screen.
       // Use the section/container rect instead so visibility detection stays correct.
@@ -414,8 +459,8 @@ $(document).ready(function () {
       svg.setAttribute('height', String(h));
 
       const calloutRect = calloutText.getBoundingClientRect();
-      // Tail anchored to the true vertical center of the callout box.
-      const sx = clamp(calloutRect.left - 20, 10, w - 10);
+      // Tail anchored to the true center of the callout box (not the left edge).
+      const sx = clamp(calloutRect.left + calloutRect.width / 2, 10, w - 10);
       const sy = clamp(calloutRect.top + calloutRect.height / 2, 20, h - 20);
 
       const visible = getVisibleTargets(h, w);
@@ -435,6 +480,7 @@ $(document).ready(function () {
       // Fan-out near the callout without moving the true tail point.
       const FAN_PX = 36; // ~2x
       const mid = (chosen.length - 1) / 2;
+      const CORNER_R = 18;
 
       for (let order = 0; order < chosen.length; order++) {
         const { i, el, r } = chosen[order];
@@ -446,14 +492,22 @@ $(document).ready(function () {
         const ex = clamp(exBase + EDGE_GAP_PX, 10, w - 10);
         const ey = clamp(r.top + r.height / 2, 20, h - 20);
 
-        // Smooth connector. Add slight y-offset to the first control point to separate curves.
-        const dx = clamp((sx - ex) * 0.55, 180, 520); // ~2x
-        const c1x = clamp(sx - dx, 10, w - 10);
-        const c2x = clamp(ex + dx * 0.55, 10, w - 10);
         const offsetY = (order - mid) * FAN_PX;
-        const c1y = clamp(sy + offsetY, 20, h - 20);
 
-        const d = `M ${sx} ${sy} C ${c1x} ${c1y}, ${c2x} ${ey}, ${ex} ${ey}`;
+        // Elbow connector with rounded corners:
+        // from callout center -> small vertical fan -> horizontal -> vertical align -> horizontal to target
+        const sy2 = clamp(sy + offsetY, 20, h - 20);
+        const dxElbow = clamp((sx - ex) * 0.45, 140, 520);
+        const midX = clamp(sx - dxElbow, ex + 40, sx - 40);
+
+        const pts = [
+          { x: sx, y: sy },
+          { x: sx, y: sy2 },
+          { x: midX, y: sy2 },
+          { x: midX, y: ey },
+          { x: ex, y: ey },
+        ];
+        const d = roundedElbowPath(pts, CORNER_R);
         p.setAttribute('d', d);
         p.style.opacity = '1';
       }
