@@ -255,7 +255,12 @@ $(document).ready(function () {
     const supportsIO = 'IntersectionObserver' in window;
 
     els.forEach((el) => {
-      const instances = bulmaCarousel.attach(el, resultsOptions);
+      const isRobotExperiments = el.id === 'robot-experiments-carousel';
+      const perCarouselOptions = isRobotExperiments
+        ? { ...resultsOptions, autoplay: false }
+        : resultsOptions;
+
+      const instances = bulmaCarousel.attach(el, perCarouselOptions);
       const slider = instances && instances[0];
 
       // BulmaCarousel pagination stores dataset.index (string) into state.next.
@@ -267,6 +272,38 @@ $(document).ready(function () {
           state.next = parseInt(state.next, 10);
           state.length = parseInt(state.length, 10);
         });
+      }
+
+      // Robot Experiments: advance only when the current video ends.
+      if (slider && isRobotExperiments) {
+        let currentVideo = null;
+        let onEnded = null;
+
+        const setupCurrentVideo = () => {
+          // BulmaCarousel sets is-current on the active slide.
+          const v = el.querySelector('.slider-item.is-current video') || el.querySelector('video');
+          if (!(v instanceof HTMLVideoElement)) return;
+
+          // Ensure it can end (no looping).
+          v.loop = false;
+
+          if (currentVideo && onEnded) currentVideo.removeEventListener('ended', onEnded);
+          currentVideo = v;
+          onEnded = () => slider.next();
+          currentVideo.addEventListener('ended', onEnded);
+
+          // Restart and play from the beginning when it becomes current.
+          try {
+            currentVideo.currentTime = 0;
+          } catch (_) { }
+          tryPlay(currentVideo);
+        };
+
+        if (typeof slider.on === 'function') {
+          slider.on('after:show', setupCurrentVideo);
+        }
+        // Initial setup.
+        setupCurrentVideo();
       }
 
       if (!supportsIO) {
@@ -312,6 +349,7 @@ $(document).ready(function () {
     // Keep this ordering aligned with the page section order.
     const targets = [
       { id: 'youtube-video', name: 'YouTube' },
+      { id: 'robot-experiments', name: 'Robot Experiments' },
       // Two separate arrows inside the Results Gallery section
       { id: 'results-human', name: 'Hand Morphology' },
       { id: 'results-robot', name: 'Robot Gripper Morphology' },
@@ -419,7 +457,12 @@ $(document).ready(function () {
     function getTargetRect(targetEl) {
       // For sections with carousels/transforms, the first <video> can be off-screen.
       // Use the section/container rect instead so visibility detection stays correct.
-      if (targetEl.id === 'results-gallery' || targetEl.id === 'results-human' || targetEl.id === 'results-robot') {
+      if (
+        targetEl.id === 'results-gallery' ||
+        targetEl.id === 'results-human' ||
+        targetEl.id === 'results-robot' ||
+        targetEl.id === 'robot-experiments'
+      ) {
         return targetEl.getBoundingClientRect();
       }
       const focus = targetEl.querySelector('video, iframe') || targetEl;

@@ -49,7 +49,7 @@
     <!-- Right-side callout to highlight AI-generated video sections -->
     <div class="ai-generated-callout" aria-hidden="true">
         <div class="ai-generated-callout__text">
-            AI-generated<br />videos
+            Contains <br />AI videos
         </div>
     </div>
     <section class="hero">
@@ -249,43 +249,76 @@
                 <center>Robot Experiments</center>
             </h2>
 
+            <center>
+                <p>Given an observation and task description, we first generate a video plan of how a dexterous hand / gripper would perform the task, and then extract the actions to deploy on robots.
+                </p>
+            </center>
+
             <h3 class="subtitle is-4">
                 <center><a href="./robot_results.html">(Click to see more results.)</a></center>
             </h3>
-            <center>
-                <p>Given the generated video plans, we first reconstruct and track the hand in 3D, then retarget the
-                    hand motion to the robot hand, and execute the actions on the real robot.
-                </p>
-            </center>
-            <div class="hero-body">
-                <div class="columns is-1 is-multiline is-mobile">
-                    <div class="column pb-0 mb-0 is-half">
-                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                            <source src="./editted_videos/robot_demo/tear_tape.mp4" type="video/mp4">
-                        </video>
-                    </div>
 
-                    <div class="column pb-0 mb-0 is-half">
-                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                            <source src="./editted_videos/robot_demo/opeb_black_cabinet.mp4" type="video/mp4">
-                        </video>
-                    </div>
+            <div id="robot-experiments-carousel" class="carousel results-carousel">
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/tear_tape.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Tear tape</p>
                 </div>
-
-                <div class="columns is-1 is-multiline is-mobile">
-                    <div class="column pb-0 mb-0 is-half">
-                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                            <source src="./editted_videos/robot_demo/close_laptop.mp4" type="video/mp4">
-                        </video>
-                    </div>
-
-                    <div class="column pb-0 mb-0 is-half">
-                        <video id="teaser" autoplay muted loop playsinline controls height="100%">
-                            <source src="./editted_videos/robot_demo/scoop_coffe.mp4" type="video/mp4">
-                        </video>
-                    </div>
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/opeb_black_cabinet.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Open black cabinet</p>
                 </div>
-
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/close_laptop.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Close laptop</p>
+                </div>
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/scoop_coffe.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Scoop coffee</p>
+                </div>
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/close_dishwasher.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Close Dishwasher</p>
+                </div>
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/press_elevator_button.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press Elevator Button</p>
+                </div>
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/wipe_the_table.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Wipe the Table</p>
+                </div>
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/carrot_over_pink_plate.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the carrot to the pink plate</p>
+                </div>
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/pickup_brush.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick up the brush</p>
+                </div>
+                <div class="item">
+                    <video autoplay muted playsinline controls height="100%" preload="none">
+                        <source data-src="./editted_videos/robot_demo/carrots_over_blue_plate.mp4" type="video/mp4">
+                    </video>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the carrots to the blue plate</p>
+                </div>
             </div>
     </section>
 

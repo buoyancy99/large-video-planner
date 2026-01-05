@@ -569,6 +569,11 @@ html {
   backdrop-filter: blur(4px);
 }
 
+/* Robot Experiments sits on a white background; keep dot bar white there. */
+#robot-experiments-carousel.results-carousel .slider-pagination {
+  background: rgba(255, 255, 255, 0.92);
+}
+
 .results-carousel .slider-pagination .slider-page {
   width: 12px;
   height: 12px;
