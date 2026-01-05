@@ -39,8 +39,8 @@ $(document).ready(function () {
   }
 
   // Initialize all div with carousel class
-  // Initialize all carousels EXCEPT the results carousel (which has custom settings).
-  var carousels = bulmaCarousel.attach('.carousel:not(#results-carousel)', options);
+  // Initialize all carousels EXCEPT the results carousels (which have custom settings).
+  var carousels = bulmaCarousel.attach('.carousel:not(.results-carousel)', options);
 
   // Pause autoplay on user interaction (fixes the old loop/closure bug).
   carousels.forEach(function (c) {
@@ -220,10 +220,9 @@ $(document).ready(function () {
 
   // Results Gallery (matches template): bulmaCarousel + lazy-load sources from data-src
   (function initResultsCarousel() {
-    const el = document.getElementById('results-carousel');
-    if (!el || !window.bulmaCarousel) return;
-
     const slidesToShow = 1;
+    const els = Array.from(document.querySelectorAll('.results-carousel'));
+    if (els.length === 0 || !window.bulmaCarousel) return;
 
     const resultsOptions = {
       slidesToScroll: 1,
@@ -233,20 +232,6 @@ $(document).ready(function () {
       autoplay: true,
       autoplaySpeed: 5000,
     };
-
-    const instances = bulmaCarousel.attach('#results-carousel', resultsOptions);
-    const slider = instances && instances[0];
-
-    // BulmaCarousel pagination stores dataset.index (string) into state.next.
-    // That can turn state.index into a string after a transition, breaking next/prev math.
-    if (slider && typeof slider.on === 'function') {
-      slider.on('after:show', function (state) {
-        if (!state) return;
-        state.index = parseInt(state.index, 10);
-        state.next = parseInt(state.next, 10);
-        state.length = parseInt(state.length, 10);
-      });
-    }
 
     // Lazy-load: populate <source src> only when video is (mostly) visible.
     const loadVideo = (video) => {
@@ -266,38 +251,54 @@ $(document).ready(function () {
     };
 
     const supportsIO = 'IntersectionObserver' in window;
-    if (!supportsIO) {
-      // Fallback: eagerly load the first few videos.
-      Array.from(el.querySelectorAll('video')).slice(0, slidesToShow).forEach(v => {
-        loadVideo(v);
-        tryPlay(v);
+
+    els.forEach((el) => {
+      const instances = bulmaCarousel.attach(el, resultsOptions);
+      const slider = instances && instances[0];
+
+      // BulmaCarousel pagination stores dataset.index (string) into state.next.
+      // That can turn state.index into a string after a transition, breaking next/prev math.
+      if (slider && typeof slider.on === 'function') {
+        slider.on('after:show', function (state) {
+          if (!state) return;
+          state.index = parseInt(state.index, 10);
+          state.next = parseInt(state.next, 10);
+          state.length = parseInt(state.length, 10);
+        });
+      }
+
+      if (!supportsIO) {
+        // Fallback: eagerly load the first few videos.
+        Array.from(el.querySelectorAll('video')).slice(0, slidesToShow).forEach(v => {
+          loadVideo(v);
+          tryPlay(v);
+        });
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            if (!(video instanceof HTMLVideoElement)) return;
+
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+              loadVideo(video);
+              tryPlay(video);
+            } else {
+              video.pause();
+            }
+          });
+        }, { root: null, threshold: [0, 0.6, 0.9] });
+
+        Array.from(el.querySelectorAll('video')).forEach(v => io.observe(v));
+      }
+
+      // Pause autoplay on interaction so users can browse.
+      el.addEventListener('click', function () {
+        if (el.bulmaCarousel) el.bulmaCarousel.pause();
       });
-      return;
-    }
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const video = entry.target;
-        if (!(video instanceof HTMLVideoElement)) return;
-
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-          loadVideo(video);
-          tryPlay(video);
-        } else {
-          video.pause();
-        }
-      });
-    }, { root: null, threshold: [0, 0.6, 0.9] });
-
-    Array.from(el.querySelectorAll('video')).forEach(v => io.observe(v));
-
-    // Pause autoplay on interaction so users can browse.
-    el.addEventListener('click', function () {
-      if (el.bulmaCarousel) el.bulmaCarousel.pause();
+      el.addEventListener('touchstart', function () {
+        if (el.bulmaCarousel) el.bulmaCarousel.pause();
+      }, { passive: true });
     });
-    el.addEventListener('touchstart', function () {
-      if (el.bulmaCarousel) el.bulmaCarousel.pause();
-    }, { passive: true });
   })();
 
   // AI-generated elbow connector arrows (fixed start label -> scrolling video sections)
@@ -308,7 +309,9 @@ $(document).ready(function () {
     // Keep this ordering aligned with the page section order.
     const targets = [
       { id: 'youtube-video', name: 'YouTube' },
-      { id: 'results-gallery', name: 'Results Gallery' },
+      // Two separate arrows inside the Results Gallery section
+      { id: 'results-human', name: 'Hand Morphology' },
+      { id: 'results-robot', name: 'Robot Gripper Morphology' },
       { id: 'multi-stage-planning', name: 'Multi-stage Planning' },
       { id: 'prompt-following', name: 'Prompt Following' },
       { id: 'qualitative-comparisons', name: 'Qualitative Comparisons' },
@@ -368,9 +371,8 @@ $(document).ready(function () {
     function getTargetRect(targetEl) {
       // For sections with carousels/transforms, the first <video> can be off-screen.
       // Use the section/container rect instead so visibility detection stays correct.
-      if (targetEl.id === 'results-gallery') {
-        const container = targetEl.querySelector('.container.is-max-desktop') || targetEl;
-        return container.getBoundingClientRect();
+      if (targetEl.id === 'results-gallery' || targetEl.id === 'results-human' || targetEl.id === 'results-robot') {
+        return targetEl.getBoundingClientRect();
       }
       const focus = targetEl.querySelector('video, iframe') || targetEl;
       return focus.getBoundingClientRect();
@@ -419,7 +421,12 @@ $(document).ready(function () {
       const visible = getVisibleTargets(h, w);
       // Keep it readable if lots of sections are visible at once.
       const MAX_ARROWS = 4;
-      const chosen = visible.length <= MAX_ARROWS ? visible : visible.slice(0, MAX_ARROWS);
+      // Prefer showing both Results-gallery sub-arrows when they are visible.
+      const pinnedIds = new Set(['results-human', 'results-robot']);
+      const pinned = visible.filter(v => pinnedIds.has(v.el && v.el.id));
+      const others = visible.filter(v => !pinnedIds.has(v.el && v.el.id));
+      const ordered = pinned.length ? pinned.concat(others) : visible;
+      const chosen = ordered.length <= MAX_ARROWS ? ordered : ordered.slice(0, MAX_ARROWS);
 
       // Default: hide everything.
       for (const p of paths) p.style.opacity = '0';

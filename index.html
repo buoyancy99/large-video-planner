@@ -246,7 +246,7 @@
     <section class="hero teaser" id="robot-experiments">
         <div class="container is-max-desktop">
             <h2 class="title is-3">
-                <center>Robot Experiments (Novel Scenes and Tasks)</center>
+                <center>Robot Experiments</center>
             </h2>
 
             <h3 class="subtitle is-4">
@@ -297,78 +297,35 @@
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <h2 class="title is-3">
-                    <center>Generated Video Plans on 3rd-party Selected Tasks </center>
+                    <center>Generated Video Plans</center>
                 </h2>
 
-                <h3 class="subtitle is-5 has-text-centered">
-                    <a class="results-gallery-more-link" href="./results_gallery.html">(Click to see more results. )</a>
+                <h3 class="subtitle is-4">
+                    <center><a class="results-gallery-more-link" href="./results_gallery.html">(Click to see more results. )</a></center>
                 </h3>
 
-                <center>
+                <!-- <center>
                     <p>Large Video Planner enables zero-shot prompt following for <b>novel scenes and tasks</b>. Here are
                         some examples of the results.
                     </p>
-                </center>
+                </center> -->
 
-                <!-- Matches the working template used in history-guidance-website/index.html -->
-                <div id="results-carousel" class="carousel results-carousel">
-                    <!-- Robot gripper videos -->
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_screwdriver_on_case.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Screwdriver On
-                            the Case</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/pick_up_santinizer.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick Up Santinizer
-                        </p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_bottle_on_paper.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Bottle On
-                            Paper</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_capybara.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Capybara</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_silver_mug.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Silver Mug</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/press_stapler.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press Stapler</p>
-                    </div>
+                <div id="results-human">
+                    <h3 class="title is-5 has-text-centered has-text-weight-normal" style="margin-top: 1.25rem;">
+                        Hand Morphology on 3rd-party Selected Tasks
+                    </h3>
 
-                    <!-- Ego-centric human motion videos -->
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source
-                                data-src="raw_videos/results_gallery_human/A%20right%20hand%20in%20a%20grey%20sleeve%20reaches%20to%20lift%20the%20stainless%20steel%20pan%20lid%20from%20the%20black%20electric%20stovetop.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">A right hand in a
-                            grey sleeve reaches to lift the stainless steel pan lid from the black electric stovetop</p>
-                    </div>
+                    <!-- Matches the working template used in history-guidance-website/index.html -->
+                    <div id="results-carousel-human" class="carousel results-carousel">
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/A%20right%20hand%20in%20a%20grey%20sleeve%20reaches%20to%20lift%20the%20stainless%20steel%20pan%20lid%20from%20the%20black%20electric%20stovetop.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">A right hand in a
+                                grey sleeve reaches to lift the stainless steel pan lid from the black electric stovetop</p>
+                        </div>
                     <div class="item">
                         <video autoplay muted loop playsinline controls height="100%" preload="none">
                             <source data-src="raw_videos/results_gallery_human/flick%20the%20light%20switch%20upward.mp4"
@@ -538,13 +495,68 @@
                         <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Switch off the light
                         </p>
                     </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/take%20out%20the%20spray%20bottle.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Take out the spray
+                                bottle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="results-robot">
+                    <h3 class="title is-5 has-text-centered has-text-weight-normal" style="margin-top: 2rem;">
+                        Robot Gripper Morphology on 3rd-party Selected Tasks
+                    </h3>
+
+                    <div id="results-carousel-robot" class="carousel results-carousel">
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/robot_video_gen/good_task_example/place_screwdriver_on_case.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Screwdriver On
+                                the Case</p>
+                        </div>
                     <div class="item">
                         <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/take%20out%20the%20spray%20bottle.mp4"
+                            <source data-src="raw_videos/robot_video_gen/good_task_example/pick_up_santinizer.mp4"
                                 type="video/mp4">
                         </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Take out the spray
-                            bottle</p>
+                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick Up Santinizer
+                        </p>
+                    </div>
+                    <div class="item">
+                        <video autoplay muted loop playsinline controls height="100%" preload="none">
+                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_bottle_on_paper.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Bottle On
+                            Paper</p>
+                    </div>
+                    <div class="item">
+                        <video autoplay muted loop playsinline controls height="100%" preload="none">
+                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_capybara.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Capybara</p>
+                    </div>
+                    <div class="item">
+                        <video autoplay muted loop playsinline controls height="100%" preload="none">
+                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_silver_mug.mp4"
+                                type="video/mp4">
+                        </video>
+                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Silver Mug</p>
+                    </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/robot_video_gen/good_task_example/press_stapler.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press Stapler</p>
+                        </div>
                     </div>
                 </div>
 

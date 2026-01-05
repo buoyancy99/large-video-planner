@@ -579,7 +579,8 @@ html {
 }
 
 .results-gallery-more-link {
-  color: #3273dc;
+  color: #3273dc !important;
+  font-size: inherit;
 }
 
 .results-gallery-more-link:hover {
