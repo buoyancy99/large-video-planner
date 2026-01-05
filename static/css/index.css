@@ -2,6 +2,132 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+/* =========================================================
+   AI Generated Video Callout + Highlights
+   ========================================================= */
+
+/* Big right-side callout (outside the main content column) */
+.ai-generated-callout {
+  position: fixed;
+  right: 18px;
+  top: clamp(420px, 58vh, 860px);
+  z-index: 1200;
+  pointer-events: none;
+  /* Match Bulma primary */
+  color: hsl(204, 86%, 53%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  filter: drop-shadow(0 14px 30px rgba(10, 10, 10, 0.18));
+}
+
+.ai-generated-callout__text {
+  font-family: "Google Sans", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  /* ~2x scale */
+  font-size: clamp(30px, 2.7vw, 40px);
+  text-align: right;
+  padding: 24px 28px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(50, 115, 220, 0.28);
+  border-left: 12px solid currentColor;
+  border-radius: 28px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(10, 10, 10, 0.10);
+}
+
+/* Little "anchor dot" so the connector feels attached */
+.ai-generated-callout__text::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  background: currentColor;
+  border-radius: 999px;
+  border: 6px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 18px rgba(10, 10, 10, 0.14);
+}
+
+/* Subtle attention pulse */
+@keyframes aiGeneratedPulse {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.ai-generated-callout__text {
+  animation: aiGeneratedPulse 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-generated-callout__text {
+    animation: none;
+  }
+}
+
+/* Hide on small screens so it doesn't cover the content */
+@media (max-width: 1023px) {
+  .ai-generated-callout {
+    display: none;
+  }
+  .ai-generated-connectors {
+    display: none;
+  }
+}
+
+/* Keep YouTube/embed rounded corners without any red border highlight */
+.ai-generated-video-target {
+  overflow: hidden; /* clips iframe/video to rounded corners */
+  border-radius: 10px;
+}
+
+/* Fixed connector layer (PowerPoint-style elbow arrows) */
+.ai-generated-connectors {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1199;
+  pointer-events: none;
+  /* Allows us to use currentColor in SVG */
+  color: hsl(204, 86%, 53%);
+}
+
+.ai-generated-connectors .ai-generated-connector-line {
+  stroke: currentColor;
+  /* ~2x scale */
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  opacity: 0.92;
+  filter: drop-shadow(0 10px 18px rgba(10, 10, 10, 0.16));
+}
+
+/* Ensure marker head stays filled (not affected by connector-line styling) */
+.ai-generated-connectors .ai-generated-connector-head {
+  fill: currentColor;
+  stroke: none;
+}
+
+.ai-generated-youtube-wrapper {
+  position: relative;
+}
+
 .footer .icon-link {
   font-size: 25px;
   color: #000;
@@ -400,4 +526,67 @@ html {
   .toc {
     display: none;
   }
+}
+
+/* Results carousel captions */
+.results-carousel .item {
+  display: flex;
+  flex-direction: column;
+}
+
+.results-carousel .item video {
+  display: block;
+  width: 100%;
+  height: auto !important; /* override any height="100%" attribute */
+}
+
+.results-carousel .slider-navigation-next,
+.results-carousel .slider-navigation-previous {
+  z-index: 20;
+}
+
+/* Keep pagination clickable and visible (above slides). */
+.results-carousel .slider-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 20;
+  pointer-events: auto;
+  /* Match Bulma's light hero background (#f5f5f5) */
+  background: rgba(245, 245, 245, 0.92);
+  backdrop-filter: blur(4px);
+}
+
+.results-carousel .slider-pagination .slider-page {
+  width: 12px;
+  height: 12px;
+  background: rgba(50, 115, 220, 0.35);
+  border: 1px solid rgba(50, 115, 220, 0.65);
+  box-shadow: 0 2px 8px rgba(10, 10, 10, 0.10);
+}
+
+.results-carousel .slider-pagination .slider-page.is-active {
+  background: #3273dc;
+  border-color: #3273dc;
+}
+
+.results-carousel .slider-item {
+  /* Reserve space so dots don't overlap captions */
+  padding-bottom: 2.5rem;
+  box-sizing: border-box;
+}
+
+.results-gallery-more-link {
+  color: #3273dc;
+}
+
+.results-gallery-more-link:hover {
+  text-decoration: underline;
+}
+
+.results-carousel__caption {
+  margin-top: 6px;
+  padding: 0 8px;
 }

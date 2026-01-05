@@ -39,20 +39,14 @@ $(document).ready(function () {
   }
 
   // Initialize all div with carousel class
-  var carousels = bulmaCarousel.attach('.carousel', options);
+  // Initialize all carousels EXCEPT the results carousel (which has custom settings).
+  var carousels = bulmaCarousel.attach('.carousel:not(#results-carousel)', options);
 
-  // Loop on each carousel initialized
-  for (var i = 0; i < carousels.length; i++) {
-    // Add listener to user interaction events
-    carousels[i].element.addEventListener('click', function () {
-      // Stop autoplay on user interaction
-      carousels[i].pause();
-    });
-    carousels[i].element.addEventListener('touchstart', function () {
-      // Stop autoplay on user interaction
-      carousels[i].pause();
-    });
-  }
+  // Pause autoplay on user interaction (fixes the old loop/closure bug).
+  carousels.forEach(function (c) {
+    c.element.addEventListener('click', function () { c.pause(); });
+    c.element.addEventListener('touchstart', function () { c.pause(); }, { passive: true });
+  });
 
   // Access to bulmaCarousel instance of an element
   var element = document.querySelector('#my-element');
@@ -222,5 +216,244 @@ $(document).ready(function () {
         }
       }
     });
+  })();
+
+  // Results Gallery (matches template): bulmaCarousel + lazy-load sources from data-src
+  (function initResultsCarousel() {
+    const el = document.getElementById('results-carousel');
+    if (!el || !window.bulmaCarousel) return;
+
+    const slidesToShow = 1;
+
+    const resultsOptions = {
+      slidesToScroll: 1,
+      slidesToShow: slidesToShow,
+      loop: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+    };
+
+    const instances = bulmaCarousel.attach('#results-carousel', resultsOptions);
+    const slider = instances && instances[0];
+
+    // BulmaCarousel pagination stores dataset.index (string) into state.next.
+    // That can turn state.index into a string after a transition, breaking next/prev math.
+    if (slider && typeof slider.on === 'function') {
+      slider.on('after:show', function (state) {
+        if (!state) return;
+        state.index = parseInt(state.index, 10);
+        state.next = parseInt(state.next, 10);
+        state.length = parseInt(state.length, 10);
+      });
+    }
+
+    // Lazy-load: populate <source src> only when video is (mostly) visible.
+    const loadVideo = (video) => {
+      const source = video.querySelector('source');
+      if (!source) return;
+      const dataSrc = source.getAttribute('data-src');
+      if (!dataSrc) return;
+      if (source.getAttribute('src') === dataSrc) return;
+
+      source.setAttribute('src', dataSrc);
+      video.load();
+    };
+
+    const tryPlay = (video) => {
+      const p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(() => { /* ignore autoplay blocks */ });
+    };
+
+    const supportsIO = 'IntersectionObserver' in window;
+    if (!supportsIO) {
+      // Fallback: eagerly load the first few videos.
+      Array.from(el.querySelectorAll('video')).slice(0, slidesToShow).forEach(v => {
+        loadVideo(v);
+        tryPlay(v);
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (!(video instanceof HTMLVideoElement)) return;
+
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+          loadVideo(video);
+          tryPlay(video);
+        } else {
+          video.pause();
+        }
+      });
+    }, { root: null, threshold: [0, 0.6, 0.9] });
+
+    Array.from(el.querySelectorAll('video')).forEach(v => io.observe(v));
+
+    // Pause autoplay on interaction so users can browse.
+    el.addEventListener('click', function () {
+      if (el.bulmaCarousel) el.bulmaCarousel.pause();
+    });
+    el.addEventListener('touchstart', function () {
+      if (el.bulmaCarousel) el.bulmaCarousel.pause();
+    }, { passive: true });
+  })();
+
+  // AI-generated elbow connector arrows (fixed start label -> scrolling video sections)
+  (function initAIGeneratedConnectors() {
+    const calloutText = document.querySelector('.ai-generated-callout__text');
+    if (!calloutText) return;
+
+    // Keep this ordering aligned with the page section order.
+    const targets = [
+      { id: 'youtube-video', name: 'YouTube' },
+      { id: 'results-gallery', name: 'Results Gallery' },
+      { id: 'multi-stage-planning', name: 'Multi-stage Planning' },
+      { id: 'prompt-following', name: 'Prompt Following' },
+      { id: 'qualitative-comparisons', name: 'Qualitative Comparisons' },
+    ];
+
+    const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+    const svgNS = 'http://www.w3.org/2000/svg';
+
+    // Create a fixed, full-viewport SVG layer for connectors.
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.classList.add('ai-generated-connectors');
+    svg.setAttribute('aria-hidden', 'true');
+
+    // Arrowhead marker
+    const defs = document.createElementNS(svgNS, 'defs');
+    const marker = document.createElementNS(svgNS, 'marker');
+    marker.setAttribute('id', 'aiConnectorArrowHead');
+    // Use user-space units so arrowhead size does NOT scale with stroke width.
+    marker.setAttribute('markerUnits', 'userSpaceOnUse');
+    // Small arrowhead in screen-space units (roughly pixels in our full-viewport viewBox).
+    // ~2x scale
+    marker.setAttribute('markerWidth', '40');
+    marker.setAttribute('markerHeight', '40');
+    marker.setAttribute('viewBox', '0 0 40 40');
+    marker.setAttribute('overflow', 'visible');
+    // Make the arrow tip land exactly at the path end point.
+    // Overhang the tip past the path endpoint so no connector stroke peeks beyond the tip.
+    marker.setAttribute('refX', '20');
+    marker.setAttribute('refY', '20');
+    marker.setAttribute('orient', 'auto');
+    const head = document.createElementNS(svgNS, 'path');
+    head.classList.add('ai-generated-connector-head');
+    head.setAttribute('d', 'M0,0 L40,20 L0,40 Z');
+    head.setAttribute('fill', 'currentColor');
+    marker.appendChild(head);
+    defs.appendChild(marker);
+    svg.appendChild(defs);
+
+    // One path per target (we'll show/hide based on visibility).
+    const paths = targets.map(() => {
+      const p = document.createElementNS(svgNS, 'path');
+      p.classList.add('ai-generated-connector-line');
+      p.setAttribute('marker-end', 'url(#aiConnectorArrowHead)');
+      p.style.opacity = '0';
+      svg.appendChild(p);
+      return p;
+    });
+
+    document.body.appendChild(svg);
+
+    let raf = null;
+    const schedule = () => {
+      if (raf) return;
+      raf = window.requestAnimationFrame(update);
+    };
+
+    function getTargetRect(targetEl) {
+      // For sections with carousels/transforms, the first <video> can be off-screen.
+      // Use the section/container rect instead so visibility detection stays correct.
+      if (targetEl.id === 'results-gallery') {
+        const container = targetEl.querySelector('.container.is-max-desktop') || targetEl;
+        return container.getBoundingClientRect();
+      }
+      const focus = targetEl.querySelector('video, iframe') || targetEl;
+      return focus.getBoundingClientRect();
+    }
+
+    function getContentRightEdge(targetEl) {
+      // Prefer the nearest ancestor container (works when the target is inside the content box).
+      let container = targetEl.closest('.container.is-max-desktop');
+      // If the target is a section wrapper (outside the content box), fall back to the first inner container.
+      if (!container) container = targetEl.querySelector?.('.container.is-max-desktop') || null;
+      if (!container) return null;
+      return container.getBoundingClientRect().right;
+    }
+
+    function getVisibleTargets(viewportH, viewportW) {
+      const visible = [];
+      for (let i = 0; i < targets.length; i++) {
+        const t = targets[i];
+        const el = document.getElementById(t.id);
+        if (!el) continue;
+        const r = getTargetRect(el);
+        const isVisible = r.bottom > 80 && r.top < viewportH - 80 && r.right > 0 && r.left < viewportW;
+        if (!isVisible) continue;
+        visible.push({ i, el, r, cy: r.top + r.height / 2 });
+      }
+      // Top-to-bottom ordering helps keep the "fan" stable while scrolling.
+      visible.sort((a, b) => a.cy - b.cy);
+      return visible;
+    }
+
+    function update() {
+      raf = null;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const EDGE_GAP_PX = 28; // ~2x: whitespace between content right edge and arrow tip
+
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      svg.setAttribute('width', String(w));
+      svg.setAttribute('height', String(h));
+
+      const calloutRect = calloutText.getBoundingClientRect();
+      // Tail anchored to the true vertical center of the callout box.
+      const sx = clamp(calloutRect.left - 20, 10, w - 10);
+      const sy = clamp(calloutRect.top + calloutRect.height / 2, 20, h - 20);
+
+      const visible = getVisibleTargets(h, w);
+      // Keep it readable if lots of sections are visible at once.
+      const MAX_ARROWS = 4;
+      const chosen = visible.length <= MAX_ARROWS ? visible : visible.slice(0, MAX_ARROWS);
+
+      // Default: hide everything.
+      for (const p of paths) p.style.opacity = '0';
+      if (chosen.length === 0) return;
+
+      // Fan-out near the callout without moving the true tail point.
+      const FAN_PX = 36; // ~2x
+      const mid = (chosen.length - 1) / 2;
+
+      for (let order = 0; order < chosen.length; order++) {
+        const { i, el, r } = chosen[order];
+        const p = paths[i];
+
+        // End of arrow: stop at the right edge of the content box (do NOT point into the content).
+        const contentRight = getContentRightEdge(el);
+        const exBase = contentRight ?? r.right;
+        const ex = clamp(exBase + EDGE_GAP_PX, 10, w - 10);
+        const ey = clamp(r.top + r.height / 2, 20, h - 20);
+
+        // Smooth connector. Add slight y-offset to the first control point to separate curves.
+        const dx = clamp((sx - ex) * 0.55, 180, 520); // ~2x
+        const c1x = clamp(sx - dx, 10, w - 10);
+        const c2x = clamp(ex + dx * 0.55, 10, w - 10);
+        const offsetY = (order - mid) * FAN_PX;
+        const c1y = clamp(sy + offsetY, 20, h - 20);
+
+        const d = `M ${sx} ${sy} C ${c1x} ${c1y}, ${c2x} ${ey}, ${ex} ${ey}`;
+        p.setAttribute('d', d);
+        p.style.opacity = '1';
+      }
+    }
+
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    schedule();
   })();
 });
