@@ -231,8 +231,8 @@ $(document).ready(function () {
       loop: true,
       infinite: true,
       autoplay: true,
-      // Faster slide switching (ms)
-      autoplaySpeed: 2500,
+      // Slightly slower slide switching (ms) to offset lazy-load latency.
+      autoplaySpeed: 3200,
     };
 
     // Lazy-load: populate <source src> only when video is (mostly) visible.
