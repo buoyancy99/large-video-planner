@@ -13,7 +13,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Large Video Planner Enables Generalizable Robot Control" />
     <meta name="twitter:description"
-        content="official website for Large Video Planner Enables Generalizable Robot Control" />
+        content="Official website for Large Video Planner Enables Generalizable Robot Control" />
     <meta name="twitter:image" content="https://boyuan.space/large-video-planner/static/images/thumbnail.jpg" />
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
@@ -62,7 +62,7 @@
                                 Large Video Planner Enables Generalizable Robot Control
                             </h1>
                             <div class="icml-ribbon tag is-primary is-light is-large">
-                                Arxiv 2025
+                                arXiv 2025
                             </div>
                         </div>
                         <div class="is-size-5 publication-authors">
@@ -150,20 +150,17 @@
                                 </span>
                                 <span class="link-block">
                                     <a href="https://huggingface.co/spaces/KempnerInstituteAI/LVP"
-                                       class="external-link button is-normal is-rounded is-dark">
-                                      <span class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewBox="0 0 95 95"
-                                             width="18" height="18"
-                                             aria-hidden="true"
-                                             style="vertical-align: middle;">
-                                          <image href="https://huggingface.co/front/assets/huggingface_logo.svg"
-                                                 width="95" height="95"/>
-                                        </svg>
-                                      </span>
-                                      <span>Hugging Face Demo</span>
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95 95" width="18"
+                                                height="18" aria-hidden="true" style="vertical-align: middle;">
+                                                <image href="https://huggingface.co/front/assets/huggingface_logo.svg"
+                                                    width="95" height="95" />
+                                            </svg>
+                                        </span>
+                                        <span>Hugging Face Demo</span>
                                     </a>
-                                  </span>
+                                </span>
                                 <!-- <span class="link-block">
                                     <a href="https://boyuan.space/diffusion-forcing/"
                                         class="external-link button is-normal is-rounded is-dark">
@@ -187,7 +184,9 @@
                         </div>
                         <div class="is-size-5 mt-3">
                             <span class="has-text-weight-bold">TL;DR:</span> LVP is a video foundation model for
-                            robotics. It generates a video plan and then deploy on robots. We ask indepdendent evaluators propose any tasks and any scenes to show its generalization.
+                            robotics that generates video plans, which we retarget into executable robot motions. To
+                            demonstrate generalization, we ask independent evaluators to propose arbitrary tasks and
+                            scenes.
                         </div>
                     </div>
                 </div>
@@ -250,7 +249,8 @@
             </h2>
 
             <center>
-                <p>Given an observation and task description, we first generate a video plan of how a dexterous hand / gripper would perform the task, and then extract the actions to deploy on robots.
+                <p>Given an observation and task description, we first generate a video plan of how a dexterous
+                    hand/gripper would perform the task, and then extract the actions to deploy on robots.
                 </p>
             </center>
 
@@ -265,7 +265,8 @@
                     <video autoplay muted playsinline controls height="100%" preload="none">
                         <source data-src="./editted_videos/robot_demo/opeb_black_cabinet.mp4" type="video/mp4">
                     </video>
-                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Open black cabinet</p>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Open black cabinet
+                    </p>
                 </div>
                 <div class="item">
                     <video autoplay muted playsinline controls height="100%" preload="none">
@@ -283,13 +284,15 @@
                     <video autoplay muted playsinline controls height="100%" preload="none">
                         <source data-src="./editted_videos/robot_demo/close_dishwasher.mp4" type="video/mp4">
                     </video>
-                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Close Dishwasher</p>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Close the dishwasher
+                    </p>
                 </div>
                 <div class="item">
                     <video autoplay muted playsinline controls height="100%" preload="none">
                         <source data-src="./editted_videos/robot_demo/press_elevator_button.mp4" type="video/mp4">
                     </video>
-                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press Elevator Button</p>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press the elevator
+                        button</p>
                 </div>
                 <div class="item">
                     <video autoplay muted playsinline controls height="100%" preload="none">
@@ -301,7 +304,8 @@
                     <video autoplay muted playsinline controls height="100%" preload="none">
                         <source data-src="./editted_videos/robot_demo/carrot_over_pink_plate.mp4" type="video/mp4">
                     </video>
-                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the carrot to the pink plate</p>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the carrot on
+                        the pink plate</p>
                 </div>
                 <div class="item">
                     <video autoplay muted playsinline controls height="100%" preload="none">
@@ -313,7 +317,8 @@
                     <video autoplay muted playsinline controls height="100%" preload="none">
                         <source data-src="./editted_videos/robot_demo/carrots_over_blue_plate.mp4" type="video/mp4">
                     </video>
-                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the carrots to the blue plate</p>
+                    <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the carrots on
+                        the blue plate</p>
                 </div>
             </div>
     </section>
@@ -337,7 +342,7 @@
 
                 <div id="results-human">
                     <h3 class="title is-5 has-text-centered has-text-weight-normal" style="margin-top: 1.25rem;">
-                        Hand Morphology on 3rd-party Selected Tasks
+                        Hand Morphology on Third-party Selected Tasks
                     </h3>
 
                     <!-- Matches the working template used in history-guidance-website/index.html -->
@@ -348,184 +353,218 @@
                                     data-src="raw_videos/results_gallery_human/A%20right%20hand%20in%20a%20grey%20sleeve%20reaches%20to%20lift%20the%20stainless%20steel%20pan%20lid%20from%20the%20black%20electric%20stovetop.mp4"
                                     type="video/mp4">
                             </video>
-                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">A right hand in a
-                                grey sleeve reaches to lift the stainless steel pan lid from the black electric stovetop</p>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">A right hand
+                                in a
+                                grey sleeve reaches to lift the stainless steel pan lid from the black electric stovetop
+                            </p>
                         </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/flick%20the%20light%20switch%20upward.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Flick the light
-                            switch upward</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/grab%20the%20black%20gas%20nozzle.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Grab the black gas
-                            nozzle</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/Insert%20the%20straw%20into%20the%20cup.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Insert the straw
-                            into the cup</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/lift%20the%20lid%20of%20a%20gray%20computer.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Lift the lid of a
-                            gray computer</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/lifts%20the%20lid%20off%20a%20while%20jar.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Lifts the lid off a
-                            while jar</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source
-                                data-src="raw_videos/results_gallery_human/moves%20the%20pink%20mouse%20closer%20to%20the%20foreground.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Moves the pink
-                            mouse closer to the foreground</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/open%20the%20oven.mp4" type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Open the oven</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/open%20the%20trash%20bin.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Open the trash bin
-                        </p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/pick%20up%20the%20blue%20creamer.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick up the blue
-                            creamer</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/pick%20up%20the%20blue%20notebook.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick up the blue
-                            notebook</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/pick%20up%20the%20soap.mp4" type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick up the soap</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source
-                                data-src="raw_videos/results_gallery_human/places%20the%20fork%20into%20the%20red%20cup%20decorated%20with%20a%20dog%20pattern..mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Places the fork into
-                            the red cup decorated with a dog pattern</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source
-                                data-src="raw_videos/results_gallery_human/press%20the%20button%20to%20flash%20the%20toliet.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press the button to
-                            flash the toliet</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/press%20the%20red%20button.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press the red button
-                        </p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/pull%20out%20a%20tissue..mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pull out a tissue</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/pull%20out%20the%20blue%20book.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pull out the blue
-                            book</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/pull%20the%20straw%20out%20of%20the%20lid.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pull the straw out
-                            of the lid</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source
-                                data-src="raw_videos/results_gallery_human/pulls%20the%20black%20vertical%20handle%20to%20open%20the%20fridge.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pulls the black
-                            vertical handle to open the fridge</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source
-                                data-src="raw_videos/results_gallery_human/erase%20the%20purple%20triangle%20drawn%20on%20the%20board..mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Erase the purple
-                            triangle drawn on the board</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source
-                                data-src="raw_videos/results_gallery_human/reaches%20for%20the%20silver%20doorknob%20to%20open%20the%20gate.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Reaches for the
-                            silver doorknob to open the gate</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/results_gallery_human/switch%20off%20the%20light.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Switch off the light
-                        </p>
-                    </div>
                         <div class="item">
                             <video autoplay muted loop playsinline controls height="100%" preload="none">
-                                <source data-src="raw_videos/results_gallery_human/take%20out%20the%20spray%20bottle.mp4"
+                                <source
+                                    data-src="raw_videos/results_gallery_human/flick%20the%20light%20switch%20upward.mp4"
                                     type="video/mp4">
                             </video>
-                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Take out the spray
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Flick the
+                                light
+                                switch upward</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/grab%20the%20black%20gas%20nozzle.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Grab the
+                                black gas
+                                nozzle</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/Insert%20the%20straw%20into%20the%20cup.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Insert the
+                                straw
+                                into the cup</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/lift%20the%20lid%20of%20a%20gray%20computer.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Lift the lid
+                                of a
+                                gray computer</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/lifts%20the%20lid%20off%20a%20while%20jar.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Lifts the lid
+                                off a
+                                white jar</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/moves%20the%20pink%20mouse%20closer%20to%20the%20foreground.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Moves the
+                                pink
+                                mouse closer to the foreground</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/open%20the%20oven.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Open the oven
+                            </p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/open%20the%20trash%20bin.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Open the
+                                trash bin
+                            </p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/pick%20up%20the%20blue%20creamer.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick up the
+                                blue
+                                creamer</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/pick%20up%20the%20blue%20notebook.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick up the
+                                blue
+                                notebook</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/pick%20up%20the%20soap.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick up the
+                                soap</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/places%20the%20fork%20into%20the%20red%20cup%20decorated%20with%20a%20dog%20pattern..mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Places the
+                                fork into
+                                the red cup decorated with a dog pattern</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/press%20the%20button%20to%20flash%20the%20toliet.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press the
+                                button to
+                                flush the toilet</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/press%20the%20red%20button.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press the red
+                                button
+                            </p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/pull%20out%20a%20tissue..mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pull out a
+                                tissue</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/pull%20out%20the%20blue%20book.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pull out the
+                                blue
+                                book</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/pull%20the%20straw%20out%20of%20the%20lid.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pull the
+                                straw out
+                                of the lid</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/pulls%20the%20black%20vertical%20handle%20to%20open%20the%20fridge.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pulls the
+                                black
+                                vertical handle to open the fridge</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/erase%20the%20purple%20triangle%20drawn%20on%20the%20board..mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Erase the
+                                purple
+                                triangle drawn on the board</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/reaches%20for%20the%20silver%20doorknob%20to%20open%20the%20gate.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Reaches for
+                                the
+                                silver doorknob to open the gate</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/results_gallery_human/switch%20off%20the%20light.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Switch off
+                                the light
+                            </p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/results_gallery_human/take%20out%20the%20spray%20bottle.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Take out the
+                                spray
                                 bottle</p>
                         </div>
                     </div>
@@ -533,54 +572,62 @@
 
                 <div id="results-robot">
                     <h3 class="title is-5 has-text-centered has-text-weight-normal" style="margin-top: 2rem;">
-                        Robot Gripper Morphology on 3rd-party Selected Tasks
+                        Robot Gripper Morphology on Third-party Selected Tasks
                     </h3>
 
                     <div id="results-carousel-robot" class="carousel results-carousel">
                         <div class="item">
                             <video autoplay muted loop playsinline controls height="100%" preload="none">
-                                <source data-src="raw_videos/robot_video_gen/good_task_example/place_screwdriver_on_case.mp4"
+                                <source
+                                    data-src="raw_videos/robot_video_gen/good_task_example/place_screwdriver_on_case.mp4"
                                     type="video/mp4">
                             </video>
-                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Screwdriver On
-                                the Case</p>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the
+                                screwdriver on
+                                the case</p>
                         </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/pick_up_santinizer.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick Up Santinizer
-                        </p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_bottle_on_paper.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Bottle On
-                            Paper</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_capybara.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Capybara</p>
-                    </div>
-                    <div class="item">
-                        <video autoplay muted loop playsinline controls height="100%" preload="none">
-                            <source data-src="raw_videos/robot_video_gen/good_task_example/place_silver_mug.mp4"
-                                type="video/mp4">
-                        </video>
-                        <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place Silver Mug</p>
-                    </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/robot_video_gen/good_task_example/pick_up_santinizer.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Pick Up the
+                                Sanitizer
+                            </p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source
+                                    data-src="raw_videos/robot_video_gen/good_task_example/place_bottle_on_paper.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the
+                                Bottle on
+                                Paper</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/robot_video_gen/good_task_example/place_capybara.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the
+                                Capybara</p>
+                        </div>
+                        <div class="item">
+                            <video autoplay muted loop playsinline controls height="100%" preload="none">
+                                <source data-src="raw_videos/robot_video_gen/good_task_example/place_silver_mug.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Place the
+                                Silver Mug</p>
+                        </div>
                         <div class="item">
                             <video autoplay muted loop playsinline controls height="100%" preload="none">
                                 <source data-src="raw_videos/robot_video_gen/good_task_example/press_stapler.mp4"
                                     type="video/mp4">
                             </video>
-                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press Stapler</p>
+                            <p class="has-text-centered is-size-6 has-text-grey results-carousel__caption">Press the
+                                Stapler</p>
                         </div>
                     </div>
                 </div>
@@ -597,7 +644,7 @@
             </h2>
 
             <h3 class="subtitle is-4">
-                <center><a href="./multistage_results.html">(Click to see more results. )</a></center>
+                <center><a href="./multistage_results.html">(Click to see more results.)</a></center>
             </h3>
             <center>
                 <p>Large Video Planner with multi-stage planning.
@@ -632,7 +679,7 @@
             </h2>
 
             <h3 class="subtitle is-4">
-                <center><a href="./promp_following_results.html">(Click to see more results. )</a></center>
+                <center><a href="./promp_following_results.html">(Click to see more results.)</a></center>
             </h3>
             <center>
                 <p>Large Video Planner enables zero-shot prompt following for <b>novel scenes and tasks</b>.
@@ -679,21 +726,21 @@
                         <source src="raw_videos/robot_video_gen/White Clutter Table One/place_bottle_on_paper.mp4"
                             type="video/mp4">
                     </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Place bottle on paper</p>
+                    <p class="has-text-centered is-size-6 has-text-grey">Place the bottle on the paper</p>
                 </div>
                 <div class="column pb-0 mb-0 is-one-third">
                     <video id="teaser" autoplay muted loop playsinline controls height="100%">
                         <source src="raw_videos/robot_video_gen/White Clutter Table One/place_orange_in_red_bowl.mp4"
                             type="video/mp4">
                     </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Place orange in red bowl</p>
+                    <p class="has-text-centered is-size-6 has-text-grey">Place the orange in the red bowl</p>
                 </div>
                 <div class="column pb-0 mb-0 is-one-third">
                     <video id="teaser" autoplay muted loop playsinline controls height="100%">
                         <source src="raw_videos/robot_video_gen/White Clutter Table One/press_stapler.mp4"
                             type="video/mp4">
                     </video>
-                    <p class="has-text-centered is-size-6 has-text-grey">Press stapler</p>
+                    <p class="has-text-centered is-size-6 has-text-grey">Press the stapler</p>
                 </div>
             </div>
 
